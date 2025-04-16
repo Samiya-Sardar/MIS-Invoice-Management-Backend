@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d0d0d;
+    box-shadow: 0 0 15px #00f0ff;
+    color: #00f0ff;
+  }
+
+  .navbar h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #00f0ff;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #00f0ff;
+  }
+
+  .logout-icon {
+    cursor: pointer;
+    position: relative;
+  }
+
+  .logout-icon:hover::after {
+    content: "Logout";
+    position: absolute;
+    top: 35px;
+    right: -5px;
+    font-size: 14px;
+    background-color: #00f0ff;
+    color: #0d0d0d;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }

@@ -1,0 +1,102 @@
+.MG {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+
+
+
+  .total-groups {
+    text-align: center;
+    font-size: 2rem;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .add-group-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+  }
+
+  .add-group-title {
+    font-size: 1.5rem;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    margin: 0;
+  }
+
+  .add-group-input {
+    padding: 5px 10px;
+    border: 2px solid cyan;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+  }
+
+  .add-group-btn {
+    background-color: cyan;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px cyan;
+    transition: transform 0.2s;
+  }
+
+  .add-group-btn:hover {
+    transform: scale(1.1);
+  }
+
+  table {
+    color: white;
+  }
+
+  .table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .table tbody tr {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .table tbody tr:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 12px cyan;
+    z-index: 1;
+  }
+
+  .action-icons i {
+    color: cyan;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .action-icons i:hover {
+    color: #00ffff;
+    transform: scale(1.2);
+  }
+
+  .container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .MG > Footer {
+    margin-top: auto;
+  }
+
