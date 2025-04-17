@@ -1,8 +1,9 @@
 import React from 'react'
 import './SalesPerson.css'
 import Navbar from './Navbar'
-import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
+
 
 
 const SalesPersonPage = () => {
@@ -23,13 +24,13 @@ const SalesPersonPage = () => {
       <i class="fas fa-link"></i>
       <h3>Manage Chain</h3>
       <p>Link and organize chains under group hierarchies.</p>
-      <a href="/chains"><i class="fas fa-arrow-circle-right"></i></a>
+      <Link to="/ManageChains"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
     <div class="card">
       <i class="fas fa-tags"></i>
       <h3>Manage Brands</h3>
       <p>Add or edit product brands within chains.</p>
-      <a href="/brands"><i class="fas fa-arrow-circle-right"></i></a>
+      <Link href="/ac"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
     <div class="card">
       <i class="fas fa-map-marked-alt"></i>

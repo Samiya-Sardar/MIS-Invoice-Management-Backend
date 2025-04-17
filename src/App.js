@@ -6,6 +6,8 @@ import SalesPersonPage from './Components/SalesPersonPage';
 import ForgotPassword from './Components/ForgotPassword';
 import ResetPassword from './Components/ResetPassword';
 import ManageGroup from './Components/ManageGroup';
+import ManageChains from './Components/ManageChains';
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Route path='/FP' element={<ForgotPassword />}/>
       <Route path='/resetpassword' element={<ResetPassword />}/>
       <Route path='/ManageGroups' element={<ManageGroup />}/>
+      <Route path='/ManageChains' element={<ManageChains />}/>
+      
     </Routes>
     </BrowserRouter>
   );
