@@ -30,7 +30,7 @@ const SalesPersonPage = () => {
       <i class="fas fa-tags"></i>
       <h3>Manage Brands</h3>
       <p>Add or edit product brands within chains.</p>
-      <Link href="/ac"><i class="fas fa-arrow-circle-right"></i></Link>
+      <Link to="/ManageBrands"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
     <div class="card">
       <i class="fas fa-map-marked-alt"></i>

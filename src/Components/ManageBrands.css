@@ -1,0 +1,100 @@
+
+  
+  /* Unique Cards */
+  .brand-stat-card {
+    background: #1a1a2e;
+    border: 1px solid #00ffff55;
+    border-radius: 10px;
+    color: #0ff;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .brand-stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  }
+  
+  /* Unique Add Button */
+  .btn-add-brand {
+    background-color: transparent;
+    border: 1px solid #0ff;
+    color: #0ff;
+    padding: 2px 10px; /* reduced padding */
+    font-size: 0.75rem; /* smaller text */
+    transition: 0.3s;
+    border-radius: 15px;
+    line-height: 1.2;
+  }
+  
+  .btn-add-brand i {
+    font-size: 0.9rem;
+    margin-right: 4px;
+  }
+  
+  .btn-add-brand:hover {
+    background-color: #0ff;
+    color: #0f0f1a;
+    box-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+  }
+  
+  
+  /* Table styling */
+  .manage-brand-table thead {
+    color: #0ff;
+  }
+  
+  .manage-brand-table tbody tr {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .manage-brand-table tbody tr:hover {
+    background-color: #2c2c44;
+    transform: scale(1.015);
+    box-shadow: 0 0 10px #0ff, 0 0 20px;
+  }
+  
+  /* Action icons */
+  .icon-action {
+    color: #0ff;
+    font-size: 1.3rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .icon-action:hover {
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    transform: scale(1.2);
+  }
+  
+  /* Slide panel */
+  .brand-slide-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    height: 100vh;
+    background-color: #1a1a2e;
+    border-left: 2px solid #0ff;
+    padding: 20px;
+    transition: right 0.4s ease-in-out;
+    z-index: 1050;
+  }
+  
+  .brand-slide-panel.active {
+    right: 0;
+    box-shadow: -5px 0 15px #0ff;
+  }
+  
+  .brand-slide-panel h5 {
+    color: #0ff;
+  }
+  
+  .close-panel {
+    background: none;
+    border: none;
+    color: #0ff;
+    font-size: 1.5rem;
+    float: right;
+  }
+  

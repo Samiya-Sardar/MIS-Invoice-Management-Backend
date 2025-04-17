@@ -4,6 +4,11 @@ desc chains;
 desc `group`;
 ALTER TABLE chains
 MODIFY company_name varchar(255) NOT NULL;
+alter table chains add column gst_no varchar(255) not null unique after chainName;
+alter table chains change chainName  company_name varchar(255) not null unique;
+alter table chains add column is_active boolean not null;
+alter table chains add column created_at timestamp default current_timestamp not null;
+alter table chains add column update_at timestamp default current_timestamp on update current_timestamp not null;
 -- Display chains
 DELIMITER $$
 
@@ -66,6 +71,7 @@ DELIMITER ;
 CALL addChain('NeelInfo', '23AAAAA0001A1Z5', 'Persian Darbar', @msg);
 SELECT @msg;
 select * from chains;
+
 
 desc chains;
 
@@ -139,9 +145,9 @@ select * from `group`;
 -- Delete Chain
 
 CREATE table Brand (
-  Brand_id INT PRIMARY KEY AUTO_INCREMENT,
-  BrandName VARCHAR(100) unique not null ,
-  chain_id INT,
+  brand_id bigint PRIMARY KEY AUTO_INCREMENT,
+  brand_name VARCHAR(100) unique not null ,
+  chain_id bigint,
   FOREIGN KEY (chain_id) REFERENCES `chains`(chain_id)
 );
 
@@ -152,22 +158,33 @@ CREATE PROCEDURE DeleteChain(
   OUT result_message VARCHAR(255)
 )
 BEGIN
+  DECLARE chain_exists INT;
   DECLARE brand_count INT;
 
-  -- Count how many chains are linked to the group
-  SELECT COUNT(*) INTO brand_count
-  FROM brand
+  -- Check if the chain ID exists
+  SELECT COUNT(*) INTO chain_exists
+  FROM chains
   WHERE chain_id = cid;
 
-  IF brand_count = 0 THEN
-    DELETE FROM `chains` WHERE chain_id = cid;
-    SET result_message = 'Chain  deleted successfully.';
+  IF chain_exists = 0 THEN
+    SET result_message = 'Chain ID does not exist.';
   ELSE
-    SET result_message = 'Chain cannot be deleted as it is linked to a Brand.';
+    -- Count how many brands are linked to this chain
+    SELECT COUNT(*) INTO brand_count
+    FROM brand
+    WHERE chain_id = cid;
+
+    IF brand_count = 0 THEN
+      DELETE FROM chains WHERE chain_id = cid;
+      SET result_message = 'Chain deleted successfully.';
+    ELSE
+      SET result_message = 'Chain cannot be deleted as it is linked to a Brand.';
+    END IF;
   END IF;
 END //
 
 DELIMITER ;
+
 
 set @msg="";
 call deletechain(4,@msg);

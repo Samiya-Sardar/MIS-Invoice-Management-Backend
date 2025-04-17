@@ -1,7 +1,7 @@
 use invoice;
 drop table `group`;
 CREATE TABLE `Group` (
-    group_id INT NOT NULL AUTO_INCREMENT primary key,
+    group_id bigint NOT NULL AUTO_INCREMENT primary key,
     group_name VARCHAR(255) UNIQUE not null,
     is_active BOOLEAN not null,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP not null,
@@ -91,9 +91,9 @@ CALL updategroup(3, 'China Wall');
 -- Chain Table
 
 CREATE table chains (
-  chain_id INT PRIMARY KEY AUTO_INCREMENT,
+  chain_id bigint PRIMARY KEY AUTO_INCREMENT,
   chainName VARCHAR(100) unique not null ,
-  group_id INT,
+  group_id bigint,
   FOREIGN KEY (group_id) REFERENCES `group`(group_id)
 );
 
