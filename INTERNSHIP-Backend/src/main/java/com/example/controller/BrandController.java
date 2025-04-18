@@ -34,8 +34,8 @@ public class BrandController {
     }
 
     @GetMapping("/all")
-    public List<Brand> getChains() {
-        return brandsService.fetchChains();
+    public List<Brand> getBrands() {
+        return brandsService.fetchBrands();
     }
     
     @PostMapping("/add")
@@ -59,6 +59,12 @@ public class BrandController {
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultMessage);
         }
+    }
+    
+    @GetMapping("/allbrand")
+    public ResponseEntity<List<String>> getAllBrandNames() {
+        List<String> brand = brandsService.getAllBrandNames();
+        return ResponseEntity.ok(brand);
     }
 
 }

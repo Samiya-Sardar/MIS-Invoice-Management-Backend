@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.sql.CallableStatement;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.CallableStatementCallback;
@@ -28,7 +29,7 @@ public class BrandService {
 	        this.brandReopsitory = brandReopsitory;
 	    }
 	
-	public List<Brand> fetchChains() {
+	public List<Brand> fetchBrands() {
         return brandReopsitory.getAllBrands();
     }
 	 @Autowired
@@ -75,6 +76,11 @@ public class BrandService {
             query.execute();
             
             return (String) query.getOutputParameterValue("result_message");
+        }
+        
+        public List<String> getAllBrandNames() {
+            List<Brand> brand = brandReopsitory.findAll();
+            return brand.stream().map(Brand::getBrand_name).collect(Collectors.toList());
         }
 
 }

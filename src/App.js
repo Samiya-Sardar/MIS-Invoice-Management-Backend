@@ -8,6 +8,7 @@ import ResetPassword from './Components/ResetPassword';
 import ManageGroup from './Components/ManageGroup';
 import ManageChains from './Components/ManageChains';
 import ManageBrands from './Components/ManageBrands';
+import ManageZone from './Components/ManageZone';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/ManageGroups' element={<ManageGroup />}/>
       <Route path='/ManageChains' element={<ManageChains />}/>
       <Route path="/ManageBrands" element={<ManageBrands />}/>
+      <Route path='/ManageZone' element={<ManageZone />}/>
       
     </Routes>
     </BrowserRouter>

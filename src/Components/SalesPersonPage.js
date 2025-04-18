@@ -36,7 +36,7 @@ const SalesPersonPage = () => {
       <i class="fas fa-map-marked-alt"></i>
       <h3>Manage SubZones</h3>
       <p>Define sub-regions for brand operations.</p>
-      <a href="/subzones"><i class="fas fa-arrow-circle-right"></i></a>
+      <Link to="/ManageZone"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
     <div class="card">
       <i class="fas fa-file-invoice-dollar"></i>

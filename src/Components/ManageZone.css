@@ -1,0 +1,126 @@
+body {
+    background-color: #0a0a0a;
+    color: #00ffff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .neon-text {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+  }
+  
+  .neon-box {
+    background-color: #121212;
+    box-shadow: 0 0 20px #00ffff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .neon-box:hover {
+    box-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff;
+    border: 1px solid #00ffff;
+    transform: scale(1.03);
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.15);
+    color: #00ffff;
+    box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .table-dark th,
+  .table-dark td {
+    border-color: #00ffff3a;
+  }
+  
+  .btn-edit,
+  .btn-delete {
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    background-color: transparent;
+    transition: 0.3s ease;
+  }
+  
+  .btn-edit:hover {
+    background-color: #005050;
+    box-shadow: 0 0 10px #00ffff88;
+  }
+  
+  .btn-delete:hover {
+    background-color: #5a0000;
+    box-shadow: 0 0 15px #ff0000cc;
+  }
+  
+  /* ICON hover styles */
+  td i {
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  td i:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 8px #00ffff;
+    color: #00ffff;
+    cursor: pointer;
+  }
+  
+  td i.bi-trash-fill:hover {
+    color: #ff4d4d;
+    text-shadow: 0 0 10px #ff0000;
+  }
+  
+  .add-icon {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+  }
+  
+  .add-icon:hover {
+    color: #0ff;
+    text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff;
+    transform: scale(1.05);
+  }
+  
+  .offcanvas {
+    background-color: #1c1c1c;
+    color: #00ffff;
+  }
+  
+  .form-control,
+  .form-select {
+    background-color: #121212;
+    border: 1px solid #00ffff;
+    color: #00ffff;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    box-shadow: 0 0 10px #00ffff;
+    border-color: #00ffff;
+  }
+  
+  .filter-section .form-select {
+    width: 150px;
+  }
+  
+  .stats-section {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-section {
+      flex-wrap: wrap;
+    }
+  }
+  
