@@ -100,7 +100,7 @@ BEGIN
                 UPDATE `subzones`
                 SET `zone_name` = p_zone_name,
                     `brand_id` = v_brand_id,
-                    `updated_at` = CURRENT_TIMESTAMP
+                    `update_at` = CURRENT_TIMESTAMP
                 WHERE `zone_id` = p_zone_id;
 
                 -- Set success message

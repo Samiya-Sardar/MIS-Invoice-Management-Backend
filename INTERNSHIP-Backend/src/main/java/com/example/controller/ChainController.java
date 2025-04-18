@@ -59,10 +59,16 @@ public class ChainController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultMessage);
         }
     }
-    
+//    
+//    @GetMapping("/allcompany")
+//    public ResponseEntity<List<String>> getAllCompanyNames() {
+//        List<String> company = chainService.getAllCompanyNames();
+//        return ResponseEntity.ok(company);
+//    }
     @GetMapping("/allcompany")
-    public ResponseEntity<List<String>> getAllCompanyNames() {
-        List<String> company = chainService.getAllCompanyNames();
-        return ResponseEntity.ok(company);
+    public ResponseEntity<List<ChainDTO>> getAllCompanyNames() {
+        List<ChainDTO> chains = chainService.getAllCompanyNames();
+        return ResponseEntity.ok(chains);
     }
+
 }

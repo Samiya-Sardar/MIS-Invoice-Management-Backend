@@ -81,9 +81,17 @@ public class ChainService {
             return (String) query.getOutputParameterValue("result_message");
         }
         
-        public List<String> getAllCompanyNames() {
-            List<ChainEntity> company = chainsRepository.findAll();
-            return company.stream().map(ChainEntity::getCompany_name).collect(Collectors.toList());
+//        public List<String> getAllCompanyNames() {
+//            List<ChainEntity> company = chainsRepository.findAll();
+//            return company.stream().map(ChainEntity::getCompany_name).collect(Collectors.toList());
+//        }
+//       
+        public List<ChainDTO> getAllCompanyNames() {
+            List<ChainEntity> chains = chainsRepository.findAll();
+            return chains.stream()
+                         .map(chain -> new ChainDTO(chain.getChain_id(), chain.getCompany_name(), chain.getGst_no(), chain.getIs_active(), 
+                                                    chain.getCreated_at().toString(), chain.getUpdated_at().toString(), chain.getGroup().getGroup_name()))
+                         .collect(Collectors.toList());
         }
-        
+
 }

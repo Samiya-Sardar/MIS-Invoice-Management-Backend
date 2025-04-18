@@ -61,5 +61,11 @@ private final SubZonesService subzonesService;
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(resultMessage);
         }
     }
+    @GetMapping("/allzones")
+    public ResponseEntity<List<String>> getAllZoneNames() {
+        List<String> zone = subzonesService.fetchAllZoneNames();
+        return ResponseEntity.ok(zone);
+    }
+
 
 }

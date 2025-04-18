@@ -9,6 +9,9 @@ import ManageGroup from './Components/ManageGroup';
 import ManageChains from './Components/ManageChains';
 import ManageBrands from './Components/ManageBrands';
 import ManageZone from './Components/ManageZone';
+import ManageEstimate from './Components/ManageEstimate';
+
+
 
 function App() {
   return (
@@ -23,6 +26,7 @@ function App() {
       <Route path='/ManageChains' element={<ManageChains />}/>
       <Route path="/ManageBrands" element={<ManageBrands />}/>
       <Route path='/ManageZone' element={<ManageZone />}/>
+      <Route path='/ManageEstimate' element={<ManageEstimate />}/>
       
     </Routes>
     </BrowserRouter>

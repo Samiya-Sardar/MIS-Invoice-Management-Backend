@@ -2,6 +2,7 @@ package com.example.service;
 
 import java.sql.CallableStatement;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.CallableStatementCallback;
@@ -10,8 +11,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.example.dto.BrandDTO;
+import com.example.dto.ChainDTO;
 import com.example.dto.SubZonesDTO;
 import com.example.entity.Brand;
+import com.example.entity.ChainEntity;
 import com.example.entity.SubZones;
 import com.example.repository.BrandRepository;
 import com.example.repository.SubZonesRepository;
@@ -76,6 +79,15 @@ public class SubZonesService {
         
         return (String) query.getOutputParameterValue("result_message");
     }
+    public List<String> fetchAllZoneNames() {
+        List<SubZones> zones = subzonesReopsitory.getAllZones(); // ✅ Use the procedure call
+        return zones.stream()
+                    .map(SubZones::getZone_name)
+                    .collect(Collectors.toList());
+    }
+
+    
+
 
 
 }

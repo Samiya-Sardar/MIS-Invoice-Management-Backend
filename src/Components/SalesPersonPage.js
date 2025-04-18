@@ -42,7 +42,7 @@ const SalesPersonPage = () => {
       <i class="fas fa-file-invoice-dollar"></i>
       <h3>Manage Estimate</h3>
       <p>Generate and handle cost estimations per brand.</p>
-      <a href="/estimates"><i class="fas fa-arrow-circle-right"></i></a>
+      <Link to="/ManageEstimate"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
     <div class="card">
       <i class="fas fa-file-invoice"></i>
