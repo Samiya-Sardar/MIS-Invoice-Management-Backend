@@ -1,0 +1,58 @@
+.invoice-neon-container {
+    background-color: #0d0d0d;
+    color: #0ff;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    margin: 30px auto;
+    box-shadow: 0 0 30px #0ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .invoice-neon-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #0ff;
+  }
+
+  .invoice-neon-form-label {
+    color: #0ff;
+    font-weight: 600;
+    text-shadow: 0 0 5px #0ff;
+  }
+
+  .invoice-neon-form-control,
+  .invoice-neon-form-control:disabled,
+  .invoice-neon-form-control:focus {
+    background-color: #1a1a1a;
+    border: 1px solid #0ff;
+    color: #0ff;
+    box-shadow: 0 0 10px #0ff;
+  }
+
+  .invoice-neon-form-control:focus {
+    outline: none;
+  }
+
+  .invoice-neon-textarea {
+    min-height: 100px;
+  }
+
+  .invoice-neon-btn {
+    background-color: #0ff;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    text-shadow: 0 0 5px #000;
+    box-shadow: 0 0 20px #0ff;
+    transition: 0.3s ease-in-out;
+  }
+
+  .invoice-neon-btn:hover {
+    background-color: #00e6e6;
+    box-shadow: 0 0 40px #0ff;
+    transform: scale(1.05);
+  }

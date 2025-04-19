@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'; 
 import './ManageEstimate.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { Link,useNavigate } from 'react-router-dom';
 
 const ManageEstimate = () => {
   const [estimates, setEstimates] = useState([]);
@@ -9,6 +10,7 @@ const ManageEstimate = () => {
   const [brands, setBrands] = useState([]);
   const [chains, setChains] = useState([]);
   const [zones, setZones] = useState([]);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     estimateId: '',
@@ -104,6 +106,12 @@ const ManageEstimate = () => {
     setEditMode(true);
   };
 
+
+  const handleInvoiceClick = (estimateId) => {
+    navigate(`/InvoiceGeneration/${estimateId}`);
+  };
+  
+
   const handleDeleteClick = (estimateId) => {
     if (window.confirm('Are you sure you want to delete this estimate?')) {
       fetch(`http://localhost:8080/estimate/delete/${estimateId}`, {
@@ -196,42 +204,53 @@ const ManageEstimate = () => {
                 <th>Total</th>
                 <th>Edit</th>
                 <th>Delete</th>
+                <th>Invoice</th> 
               </tr>
             </thead>
             <tbody>
-              {estimates.map((estimate, index) => (
-                <tr key={estimate.estimateId}>
-                  <td>{index + 1}</td>
-                  <td>{estimate.chain.group.group_name}</td>
-                  <td>{estimate.chain.chain_id}</td>
-                  <td>{estimate.brandName}</td>
-                  <td>{estimate.zoneName}</td>
-                  <td>{estimate.service}</td>
-                  <td>{estimate.quantity}</td>
-                  <td>{estimate.costPerUnit}</td>
-                  <td>{estimate.totalCost}</td>
-                  <td className="table-action">
-                    <i
-                      className="bi bi-pencil-square"
-                      data-bs-toggle="offcanvas"
-                      data-bs-target="#createPanel"
-                      onClick={() => handleEditClick(estimate)}
-                    ></i>
-                  </td>
-                  <td className="table-action">
-                    <i
-                      className="bi bi-trash"
-                      onClick={() => handleDeleteClick(estimate.estimateId)}
-                    ></i>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+  {estimates.map((estimate) => (
+    <tr key={estimate.estimateId}>
+      <td>{estimate.estimateId}</td>
+      <td>{estimate.chain.group.group_name}</td>
+      <td>{estimate.chain.chain_id}</td>
+      <td>{estimate.brandName}</td>
+      <td>{estimate.zoneName}</td>
+      <td>{estimate.service}</td>
+      <td>{estimate.quantity}</td>
+      <td>{estimate.costPerUnit}</td>
+      <td>{estimate.totalCost}</td>
+      <td className="table-action">
+        <i
+          className="bi bi-pencil-square"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#createPanel"
+          onClick={() => handleEditClick(estimate)}
+        ></i>
+      </td>
+      <td className="table-action">
+        <i
+          className="bi bi-trash"
+          onClick={() => handleDeleteClick(estimate.estimateId)}
+        ></i>
+      </td>
+      <td className="table-action">
+  <i
+    className="bi bi-file-earmark-text"
+    title="Generate Invoice"
+    style={{ cursor: 'pointer' }}
+    onClick={() => handleInvoiceClick(estimate.estimateId)} // Pass estimateId here
+  ></i>
+</td>
+
+    </tr>
+  ))}
+</tbody>
+
           </table>
         </div>
       </div>
 
-      {/* Create/Edit Panel */}
+   
       <div className="offcanvas offcanvas-end" tabIndex="-1" id="createPanel">
         <div className="offcanvas-header">
           <h5 className="offcanvas-title">{editMode ? 'Edit Estimate' : 'Create Estimate'}</h5>

@@ -10,7 +10,8 @@ import ManageChains from './Components/ManageChains';
 import ManageBrands from './Components/ManageBrands';
 import ManageZone from './Components/ManageZone';
 import ManageEstimate from './Components/ManageEstimate';
-
+import InvoiceGeneration from './Components/InvoiceGeneration';
+import ManageInvoice from './Components/ManageInvoice';
 
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
       <Route path="/ManageBrands" element={<ManageBrands />}/>
       <Route path='/ManageZone' element={<ManageZone />}/>
       <Route path='/ManageEstimate' element={<ManageEstimate />}/>
+      <Route path="/InvoiceGeneration/:estimateId" element={<InvoiceGeneration />}/>
+      <Route path='/ManageInvoice' element={<ManageInvoice />}/>
       
     </Routes>
     </BrowserRouter>

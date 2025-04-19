@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -50,5 +51,10 @@ public class EstimateController {
     public ResponseEntity<String> deleteEstimate(@PathVariable Long estimateId) {
         String message = estimateService.deleteEstimate(estimateId);
         return ResponseEntity.ok(message);  // Respond with the message from the procedure
+    }
+    
+    @GetMapping("/details/{estimateId}")
+    public List<EstimateDTO> getEstimateDetails(@PathVariable Long estimateId) {
+        return estimateService.getEstimateDetailsByEstimateId(estimateId);
     }
 }

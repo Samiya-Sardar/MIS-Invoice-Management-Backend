@@ -1,0 +1,99 @@
+.dashboard-body {
+    background-color: #000;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .dashboard-total-invoice {
+    font-size: 1.5rem;
+    color: cyan;
+    font-weight: bold;
+    text-shadow: 0 0 10px cyan;
+  }
+
+  .dashboard-search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .dashboard-search-wrapper .dashboard-search-bar {
+    border-radius: 40px;
+    border: none;
+    padding: 12px 25px;
+    background-color: #111;
+    color: cyan;
+    width: 50%;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .dashboard-search-wrapper .dashboard-search-bar::placeholder {
+    color: cyan;
+  }
+
+  .dashboard-search-wrapper .dashboard-search-bar:hover {
+    background-color: #222;
+    box-shadow: 0 0 10px cyan;
+  }
+
+  .dashboard-search-wrapper .input-group-text {
+    border-radius: 40px 0 0 40px;
+    background-color: #111;
+    color: cyan;
+    border: none;
+  }
+
+  .dashboard-table-wrapper {
+    background-color: #111;
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .dashboard-table th, .dashboard-table td {
+    color: white;
+    text-align: center;
+  }
+
+  .dashboard-table th {
+    background-color: #222;
+  }
+
+  .dashboard-table td {
+    background-color: #111;
+  }
+
+  .dashboard-table tr {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .dashboard-table tr:hover {
+    background-color: #333;
+    box-shadow: 0 0 15px cyan; /* Glow effect on hover */
+    transform: scale(1.05); /* Pop-out effect */
+  }
+
+  .dashboard-table .edit-icon:hover,
+  .dashboard-table .trash-icon:hover {
+    color: cyan;
+    cursor: pointer;
+    transform: scale(1.2); /* Slight scale up effect for the icons */
+  }
+
+  .dashboard-table .edit-icon:hover {
+    color: cyan;
+  }
+
+  .dashboard-table .trash-icon:hover {
+    color: red;
+  }
+
+  .dashboard-offcanvas {
+    background-color: #111;
+    color: white;
+  }
+
+  .dashboard-offcanvas input:disabled,
+  .dashboard-offcanvas textarea:disabled {
+    background-color: #222 !important;
+    color: white !important;
+  }

@@ -48,7 +48,7 @@ const SalesPersonPage = () => {
       <i class="fas fa-file-invoice"></i>
       <h3>Manage Invoices</h3>
       <p>View, create and send invoice records instantly.</p>
-      <a href="/invoices"><i class="fas fa-arrow-circle-right"></i></a>
+      <Link to="/ManageInvoice"><i class="fas fa-arrow-circle-right"></i></Link>
     </div>
   </div>
 <Footer />
